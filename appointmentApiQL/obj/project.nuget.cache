@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7lJ1VGlybAJjR3iOM8tV1nxf8lYBX0rKvKJ+9H+R3pdXhWqff7P3J7fXQH7BHbTS/qErwZIUmNEIjbljmNgtqA==",
+  "dgSpecHash": "cMzqUjPhMXSV4FYNGcUOLtjrV3OnZSkblZE3sWvgCZLnBfBBZSza176APSvhkGGWvH5SEYgYGezAmfEfU0GAlg==",
   "success": true,
-  "projectFilePath": "D:\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL.csproj",
+  "projectFilePath": "D:\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL\\Recess.ApiQL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yunus\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

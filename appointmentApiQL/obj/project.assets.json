@@ -4802,9 +4802,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL.csproj",
-      "projectName": "appointmentApiQL",
-      "projectPath": "D:\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL.csproj",
+      "projectUniqueName": "D:\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL\\Recess.ApiQL.csproj",
+      "projectName": "Recess.ApiQL",
+      "projectPath": "D:\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL\\Recess.ApiQL.csproj",
       "packagesPath": "C:\\Users\\yunus\\.nuget\\packages\\",
       "outputPath": "D:\\appointmentApiQL\\appointmentApiQL\\appointmentApiQL\\obj\\",
       "projectStyle": "PackageReference",

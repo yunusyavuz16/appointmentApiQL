@@ -2,6 +2,7 @@
 using Google.Cloud.Firestore;
 using HotChocolate.AspNetCore.Authorization;
 using Newtonsoft.Json;
+using Recess.Models;
 using Recess.Providers;
 using System;
 
@@ -36,8 +37,6 @@ namespace Recess.Queries
                     PhotoUrl= userRecord.PhotoUrl,
                     Uid= userRecord.Uid,
                 };
-                var cancelSource = new CancellationTokenSource();
-                Console.WriteLine("fs");
                 return user;
             }
             catch(Exception e)
@@ -46,9 +45,23 @@ namespace Recess.Queries
             }
             
         }
+        public async Task<UserRoles> GetUserRoles(string id, [Service] IHttpContextAccessor contextAccessor, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var store = await _firestoreProvider.Get<UserRoles>(id, cancellationToken);
+                var userRole = new UserRoles
+                {
+                    DisplayName = store.DisplayName,
+                    Id = id
+                };
+                return userRole;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
-    public interface userRole
-    {
-        public string Id { get; set; }
-    };
+
 }

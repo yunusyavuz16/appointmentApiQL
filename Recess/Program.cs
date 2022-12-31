@@ -1,6 +1,11 @@
 using FirebaseAdmin;
+using Google.Api;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Firestore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
 using Recess.Helpers;
 using Recess.Providers;
 using Recess.Queries;
@@ -10,8 +15,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 
-GoogleCredential cred = GoogleCredential.FromFile("D:\\Recess\\Recess\\Recess\\service-acc.json");
 
+
+GoogleCredential cred = GoogleCredential.FromFile("D:\\Recess\\Recess\\Recess\\service-acc.json");
 
 var jsonString = File.ReadAllText("D:\\Recess\\Recess\\Recess\\service-acc.json");
 var defaultApp = FirebaseApp.Create(new AppOptions()
@@ -23,14 +29,14 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-builder.Services.AddHealthChecks();
-
+builder.Services.AddMvc();
 
 builder.Services
            .AddGraphQLServer()
            .AddAuthorization()
                 .AddQueryType(x => x.Name("Query"))
                       .AddTypeExtension<UserQueries>()
+                      .AddTypeExtension<AuthenticationQueries>()
                    .AddFiltering()
                    .AddSorting()
                    .AddHttpRequestInterceptor(
@@ -56,12 +62,27 @@ builder.Services.AddSingleton(_ => new FirestoreProvider(
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
-        builder =>
-        {
+    builder =>
+    {
             builder.WithOrigins();
         });
 });
 
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+.AddJwtBearer(opt =>
+{
+    opt.Authority = builder.Configuration.GetSection("JwtFirebaseValidIssuer").Value;
+    opt.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration.GetSection("JwtFirebaseValidIssuer").Value,
+        ValidAudience = builder.Configuration.GetSection("JwtFirebaseValidAudience").Value
+    };
+});
 
 var app = builder.Build();
 
@@ -84,10 +105,16 @@ app.UseCors(builder => builder
 
 app.UseEndpoints(endpoints =>
 {
+
+    endpoints.MapControllers();
     endpoints.MapGraphQL();
-    endpoints.MapBananaCakePop("/ui");
+        endpoints.MapBananaCakePop("/ui");
 });
 
+
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 
 HttpHelper.Configure(((IApplicationBuilder)app).ApplicationServices.GetRequiredService<IHttpContextAccessor>());
 

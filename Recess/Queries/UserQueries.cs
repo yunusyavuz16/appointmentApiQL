@@ -25,8 +25,6 @@ namespace Recess.Queries
             {
                 
                 UserRecord userRecord = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(email);
-                Console.WriteLine("userRec");
-                Console.WriteLine(userRecord.EmailVerified);
                 var user = new UserRecordArgs
                 {
                     Email= userRecord.Email,

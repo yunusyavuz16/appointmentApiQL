@@ -1,5 +1,6 @@
 D:\Recess\Recess\Recess\bin\Debug\net6.0\appsettings.Development.json
 D:\Recess\Recess\Recess\bin\Debug\net6.0\appsettings.json
+D:\Recess\Recess\Recess\bin\Debug\net6.0\firebase-config.json
 D:\Recess\Recess\Recess\bin\Debug\net6.0\service-acc.json
 D:\Recess\Recess\Recess\bin\Debug\net6.0\Recess.exe
 D:\Recess\Recess\Recess\bin\Debug\net6.0\Recess.deps.json
@@ -45,10 +46,18 @@ D:\Recess\Recess\Recess\bin\Debug\net6.0\HotChocolate.Types.Scalars.Upload.dll
 D:\Recess\Recess\Recess\bin\Debug\net6.0\HotChocolate.Utilities.dll
 D:\Recess\Recess\Recess\bin\Debug\net6.0\HotChocolate.Utilities.Introspection.dll
 D:\Recess\Recess\Recess\bin\Debug\net6.0\HotChocolate.Validation.dll
+D:\Recess\Recess\Recess\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Recess\Recess\Recess\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Recess\Recess\Recess\bin\Debug\net6.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\Recess\Recess\Recess\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Recess\Recess\Recess\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Recess\Recess\Recess\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Recess\Recess\Recess\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Recess\Recess\Recess\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\Recess\Recess\Recess\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Recess\Recess\Recess\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Recess\Recess\Recess\bin\Debug\net6.0\System.Linq.Async.dll
+D:\Recess\Recess\Recess\bin\Debug\net6.0\System.Security.Permissions.dll
 D:\Recess\Recess\Recess\obj\Debug\net6.0\Recess.csproj.AssemblyReference.cache
 D:\Recess\Recess\Recess\obj\Debug\net6.0\Recess.GeneratedMSBuildEditorConfig.editorconfig
 D:\Recess\Recess\Recess\obj\Debug\net6.0\Recess.AssemblyInfoInputs.cache

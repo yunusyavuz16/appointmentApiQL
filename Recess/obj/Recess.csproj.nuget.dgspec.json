@@ -46,21 +46,11 @@
             },
             "Google.Cloud.Firestore": {
               "target": "Package",
-              "version": "[2.4.0, )"
+              "version": "[3.0.0, )"
             },
             "Google.Cloud.Firestore.V1": {
               "target": "Package",
               "version": "[3.0.0, )"
-            },
-            "Grpc.Core": {
-              "target": "Package",
-              "version": "[2.46.5, )"
-            },
-            "Grpc.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.51.0, )"
             },
             "HotChocolate.AspNetCore": {
               "target": "Package",

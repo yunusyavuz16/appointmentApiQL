@@ -3,6 +3,5 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)hotchocolate.data\12.15.2\build\HotChocolate.Data.targets" Condition="Exists('$(NuGetPackageRoot)hotchocolate.data\12.15.2\build\HotChocolate.Data.targets')" />
     <Import Project="$(NuGetPackageRoot)hotchocolate.aspnetcore\12.15.2\build\HotChocolate.AspNetCore.targets" Condition="Exists('$(NuGetPackageRoot)hotchocolate.aspnetcore\12.15.2\build\HotChocolate.AspNetCore.targets')" />
-    <Import Project="$(NuGetPackageRoot)grpc.tools\2.51.0\build\Grpc.Tools.targets" Condition="Exists('$(NuGetPackageRoot)grpc.tools\2.51.0\build\Grpc.Tools.targets')" />
   </ImportGroup>
 </Project>

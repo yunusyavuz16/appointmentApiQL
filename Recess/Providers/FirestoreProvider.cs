@@ -1,4 +1,6 @@
 ﻿using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
+using Recess.Models;
 
 namespace Recess.Providers
 {
@@ -43,6 +45,14 @@ namespace Recess.Providers
             var snapshot = await query.GetSnapshotAsync(ct);
             return snapshot.Documents.Select(x => x.ConvertTo<T>()).ToList();
         }
+
+        //public async Task<UserRoles> GetDataFirstTime() {
+
+        //    var cancelSource = new CancellationToken();
+        //    var document = _fireStoreDb.Collection("userRoles").Document("ij6JLyiH257KW3XtDW20");
+        //    var snap = await document.GetSnapshotAsync(cancelSource);
+        //    return snap.ConvertTo<UserRoles>;
+        //}
         public interface IFirebaseEntity
         {
             public string Id { get; set; }

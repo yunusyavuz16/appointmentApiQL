@@ -1,18 +1,29 @@
 ﻿using FirebaseAdmin.Auth;
+using Google.Cloud.Firestore;
 using HotChocolate.AspNetCore.Authorization;
+using Newtonsoft.Json;
+using Recess.Providers;
 using System;
 
 namespace Recess.Queries
 {
-    [ExtendObjectTypeAttribute("Query")]
-    
+    [ExtendObjectType("Query")]
+
     public class UserQueries
     {
-        public async Task<UserRecordArgs> GetUser( [Service] IHttpContextAccessor contextAccessor) {
+        
+        private readonly FirestoreProvider _firestoreProvider;
+
+        public UserQueries(FirestoreProvider firestoreProvider)
+        {
+            _firestoreProvider = firestoreProvider;
+        }
+
+        public async Task<UserRecordArgs> GetUser(string email, [Service] IHttpContextAccessor contextAccessor, CancellationToken cancellationToken) {
             try
             {
                 
-                UserRecord userRecord = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync("yunusyavuz016@gmail.com");
+                UserRecord userRecord = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(email);
                 Console.WriteLine("userRec");
                 Console.WriteLine(userRecord.EmailVerified);
                 var user = new UserRecordArgs
@@ -25,6 +36,8 @@ namespace Recess.Queries
                     PhotoUrl= userRecord.PhotoUrl,
                     Uid= userRecord.Uid,
                 };
+                var cancelSource = new CancellationTokenSource();
+                Console.WriteLine("fs");
                 return user;
             }
             catch(Exception e)
@@ -34,4 +47,8 @@ namespace Recess.Queries
             
         }
     }
+    public interface userRole
+    {
+        public string Id { get; set; }
+    };
 }

@@ -9,10 +9,8 @@
       "Recess/1.0.0": {
         "dependencies": {
           "FirebaseAdmin": "2.3.0",
-          "Google.Cloud.Firestore": "2.4.0",
+          "Google.Cloud.Firestore": "3.0.0",
           "Google.Cloud.Firestore.V1": "3.0.0",
-          "Grpc.Core": "2.46.5",
-          "Grpc.Tools": "2.51.0",
           "HotChocolate.AspNetCore": "12.15.2",
           "HotChocolate.AspNetCore.Authorization": "12.15.2",
           "HotChocolate.Data": "12.15.2",
@@ -26,7 +24,7 @@
         "dependencies": {
           "Google.Api.Gax.Rest": "3.2.0",
           "Google.Apis.Auth": "1.56.0",
-          "System.Collections.Immutable": "1.7.1"
+          "System.Collections.Immutable": "6.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/FirebaseAdmin.dll": {
@@ -64,7 +62,7 @@
           "Google.Api.Gax": "4.0.0",
           "Google.Apis.Auth": "1.56.0",
           "Grpc.Auth": "2.46.3",
-          "Grpc.Core.Api": "2.46.5",
+          "Grpc.Core.Api": "2.46.3",
           "Grpc.Net.Client": "2.46.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
@@ -125,17 +123,16 @@
           }
         }
       },
-      "Google.Cloud.Firestore/2.4.0": {
+      "Google.Cloud.Firestore/3.0.0": {
         "dependencies": {
           "Google.Cloud.Firestore.V1": "3.0.0",
-          "Grpc.Core": "2.46.5",
-          "System.Collections.Immutable": "1.7.1",
-          "System.Linq.Async": "4.0.0"
+          "System.Collections.Immutable": "6.0.0",
+          "System.Linq.Async": "6.0.1"
         },
         "runtime": {
-          "lib/netstandard2.0/Google.Cloud.Firestore.dll": {
-            "assemblyVersion": "2.4.0.0",
-            "fileVersion": "2.4.0.0"
+          "lib/netstandard2.1/Google.Cloud.Firestore.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
           }
         }
       },
@@ -198,7 +195,7 @@
       "Grpc.Auth/2.46.3": {
         "dependencies": {
           "Google.Apis.Auth": "1.56.0",
-          "Grpc.Core.Api": "2.46.5"
+          "Grpc.Core.Api": "2.46.3"
         },
         "runtime": {
           "lib/netstandard2.0/Grpc.Auth.dll": {
@@ -207,53 +204,14 @@
           }
         }
       },
-      "Grpc.Core/2.46.5": {
-        "dependencies": {
-          "Grpc.Core.Api": "2.46.5",
-          "System.Memory": "4.5.4"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Grpc.Core.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.46.5.0"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so": {
-            "rid": "linux-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-x64/native/libgrpc_csharp_ext.x64.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib": {
-            "rid": "osx-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/grpc_csharp_ext.x64.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/grpc_csharp_ext.x86.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Grpc.Core.Api/2.46.5": {
+      "Grpc.Core.Api/2.46.3": {
         "dependencies": {
           "System.Memory": "4.5.4"
         },
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.46.5.0"
+            "fileVersion": "2.46.3.0"
           }
         }
       },
@@ -271,7 +229,7 @@
       },
       "Grpc.Net.Common/2.46.0": {
         "dependencies": {
-          "Grpc.Core.Api": "2.46.5"
+          "Grpc.Core.Api": "2.46.3"
         },
         "runtime": {
           "lib/net6.0/Grpc.Net.Common.dll": {
@@ -280,7 +238,6 @@
           }
         }
       },
-      "Grpc.Tools/2.51.0": {},
       "HotChocolate/12.15.2": {
         "dependencies": {
           "HotChocolate.Execution": "12.15.2",
@@ -297,7 +254,7 @@
         "dependencies": {
           "HotChocolate.Language": "12.15.2",
           "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
-          "System.Collections.Immutable": "1.7.1"
+          "System.Collections.Immutable": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/HotChocolate.Abstractions.dll": {
@@ -598,18 +555,26 @@
           }
         }
       },
-      "System.Collections.Immutable/1.7.1": {},
+      "System.Collections.Immutable/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
       "System.ComponentModel.Annotations/4.7.0": {},
       "System.Diagnostics.DiagnosticSource/4.7.1": {},
-      "System.Linq.Async/4.0.0": {
+      "System.Linq.Async/6.0.1": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0"
+        },
         "runtime": {
-          "lib/netcoreapp3.0/System.Linq.Async.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.0.2"
+          "lib/net6.0/System.Linq.Async.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1.35981"
           }
         }
       },
       "System.Memory/4.5.4": {},
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Text.Json/4.7.0": {},
       "System.Threading.Channels/4.7.0": {},
       "System.Threading.Tasks.Extensions/4.5.4": {}
@@ -677,12 +642,12 @@
       "path": "google.apis.core/1.56.0",
       "hashPath": "google.apis.core.1.56.0.nupkg.sha512"
     },
-    "Google.Cloud.Firestore/2.4.0": {
+    "Google.Cloud.Firestore/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JqtqkC/4nQ8Bwtr+BfxN0ERrXR3xmnjNR+s59padPgjgBp0Rwj8OjskM+s1eKVk9/f8r39udq88MS+t2a+G/TQ==",
-      "path": "google.cloud.firestore/2.4.0",
-      "hashPath": "google.cloud.firestore.2.4.0.nupkg.sha512"
+      "sha512": "sha512-BI02SNHcreMHqkErVK8XYs65dDOBIxYUjk5n86MgOkZSXYSYXT6iXwYQLhDWvScFX9asEsjINS7hovRI/L+LLA==",
+      "path": "google.cloud.firestore/3.0.0",
+      "hashPath": "google.cloud.firestore.3.0.0.nupkg.sha512"
     },
     "Google.Cloud.Firestore.V1/3.0.0": {
       "type": "package",
@@ -726,19 +691,12 @@
       "path": "grpc.auth/2.46.3",
       "hashPath": "grpc.auth.2.46.3.nupkg.sha512"
     },
-    "Grpc.Core/2.46.5": {
+    "Grpc.Core.Api/2.46.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bD35LTppXYmRvymX6rV+mqc2wZcZf8o0fYkEJ414cul1RiGRWTeVWOtDC94CaTGG2Ie/XoLTd347bnBB5vHaGQ==",
-      "path": "grpc.core/2.46.5",
-      "hashPath": "grpc.core.2.46.5.nupkg.sha512"
-    },
-    "Grpc.Core.Api/2.46.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Y8ZWjt0axK3ApE3OrERivXiIg6aboIq7AXbWAmdZWtHXfj3PkZeihSOaHN+acGkRy5CeSMXgBCj/+kWjyPFiaw==",
-      "path": "grpc.core.api/2.46.5",
-      "hashPath": "grpc.core.api.2.46.5.nupkg.sha512"
+      "sha512": "sha512-uy1oe5baVa4V+C8ZyMiA8xYdNIx5A3PiacQL0f1zWDjF2z64Cb1MMXXRTs3GX+jeKpoK/RtOZg8UnJSm2KC/pQ==",
+      "path": "grpc.core.api/2.46.3",
+      "hashPath": "grpc.core.api.2.46.3.nupkg.sha512"
     },
     "Grpc.Net.Client/2.46.0": {
       "type": "package",
@@ -753,13 +711,6 @@
       "sha512": "sha512-RjVHthmxrD7pK7kVIiIiSfGEkf1wxVy5nKyqDMKJAwy8vn6YZ/XOZLHZKil0s7VDkrO+HNqd6uC9LiIhL7o0ow==",
       "path": "grpc.net.common/2.46.0",
       "hashPath": "grpc.net.common.2.46.0.nupkg.sha512"
-    },
-    "Grpc.Tools/2.51.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-dGWgVYiTiwdlQuTK8kqqOkhYVHuOOuq3DVBmkjFwNOYQR9FW9YyEu0TXpxItc7W4xQ4lnahCLuHMNHd4012bnQ==",
-      "path": "grpc.tools/2.51.0",
-      "hashPath": "grpc.tools.2.51.0.nupkg.sha512"
     },
     "HotChocolate/12.15.2": {
       "type": "package",
@@ -985,12 +936,12 @@
       "path": "newtonsoft.json/13.0.2",
       "hashPath": "newtonsoft.json.13.0.2.nupkg.sha512"
     },
-    "System.Collections.Immutable/1.7.1": {
+    "System.Collections.Immutable/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
-      "path": "system.collections.immutable/1.7.1",
-      "hashPath": "system.collections.immutable.1.7.1.nupkg.sha512"
+      "sha512": "sha512-l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
+      "path": "system.collections.immutable/6.0.0",
+      "hashPath": "system.collections.immutable.6.0.0.nupkg.sha512"
     },
     "System.ComponentModel.Annotations/4.7.0": {
       "type": "package",
@@ -1006,12 +957,12 @@
       "path": "system.diagnostics.diagnosticsource/4.7.1",
       "hashPath": "system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
     },
-    "System.Linq.Async/4.0.0": {
+    "System.Linq.Async/6.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WbiYEedFZeM+psmMyoCt1AKbZppAZg8Eq1ZTQ+521fGNeXqlgJj0tZYV5n1LsKRO5osQuitYxGNuzPTy3213sg==",
-      "path": "system.linq.async/4.0.0",
-      "hashPath": "system.linq.async.4.0.0.nupkg.sha512"
+      "sha512": "sha512-0YhHcaroWpQ9UCot3Pizah7ryAzQhNvobLMSxeDIGmnXfkQn8u5owvpOH0K6EVB+z9L7u6Cc4W17Br/+jyttEQ==",
+      "path": "system.linq.async/6.0.1",
+      "hashPath": "system.linq.async.6.0.1.nupkg.sha512"
     },
     "System.Memory/4.5.4": {
       "type": "package",
@@ -1019,6 +970,13 @@
       "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
       "path": "system.memory/4.5.4",
       "hashPath": "system.memory.4.5.4.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "System.Text.Json/4.7.0": {
       "type": "package",

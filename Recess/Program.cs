@@ -1,9 +1,6 @@
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Firestore;
-using Google.Cloud.Firestore.V1;
-using Grpc.Auth;
-using Grpc.Core;
 using Recess.Helpers;
 using Recess.Providers;
 using Recess.Queries;
@@ -17,10 +14,6 @@ GoogleCredential cred = GoogleCredential.FromFile("D:\\Recess\\Recess\\Recess\\s
 
 
 var jsonString = File.ReadAllText("D:\\Recess\\Recess\\Recess\\service-acc.json");
-ChannelCredentials channelCredentials = cred.ToChannelCredentials();
-Channel channel = new Channel(FirestoreClient.DefaultEndpoint.ToString(), channelCredentials);
-FirestoreClient firestoreClient = FirestoreClient.Create();
-
 var defaultApp = FirebaseApp.Create(new AppOptions()
 {
     Credential = cred,
@@ -35,6 +28,7 @@ builder.Services.AddHealthChecks();
 
 builder.Services
            .AddGraphQLServer()
+           .AddAuthorization()
                 .AddQueryType(x => x.Name("Query"))
                       .AddTypeExtension<UserQueries>()
                    .AddFiltering()
@@ -48,6 +42,7 @@ builder.Services
                            return new ValueTask(Task.CompletedTask);
                        })
                    .SetRequestOptions(_ => new HotChocolate.Execution.Options.RequestExecutorOptions { ExecutionTimeout = TimeSpan.FromMinutes(3) });
+
 
 builder.Services.AddSingleton(_ => new FirestoreProvider(
     new FirestoreDbBuilder
